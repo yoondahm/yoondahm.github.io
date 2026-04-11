@@ -1,47 +1,13 @@
-<!DOCTYPE html>
-<html lang="ko">
-    <head>
-        <meta charset="utf-8">
-        <title>블로그</title>
-    </head>
-    <body>
-        <h1>Hello, World!</h1>
-        <h2>Hello, World!</h2>
-        <h3>Hello, World!</h3>
-        <h4>Hello, World!</h4>
-        <h5>Hello, World!</h5>
-        <h6>Hello, World!</h6>
-        <hr/>
-        나는 일렉기타다. <br/>
-        오오옹 <br/>
-        <pre>
-    sdsdsdasd
-    sds dsd sd s   d sㄴ ㄴ  ㄴㄴ
-
-    ㄴㄴ
-    ㄴㄴ <br/>
-
-    ㄴ
-        </pre>
-
-        <p>나는 단락이다.</p>
-        <blockquote>나는 들여쓰기다.</blockquote>
-        <blockquote>
-            <p>
-                이런 걸 블록 레벨 요소라 불러요
-            </p>
-        </blockquote>
-        <strong>두꺼운 청년.</strong><em>기울어진 청년</em><br/>
-        이건 <mark>강조</mark> 해야돼. <br/>
-        이런 건 인라인 요소라 부르던가?<br/>
-        <code>Hello, World!</code>
-        <div title="와! ㄹㅈㄷ 툴팁!">
-            안ㅇㄴ여ㅑ낭쥬ㅐㅈㄴㅁㄹ옿여ㅑㅛㅠㅗ닺ㄷ입러ㅑㅗㅍㄷㅎ여냐ㅠㅘ
-        </div>
-        내 프사: <br><img src="https://avatars.githubusercontent.com/u/204158557?s=48&v=4"><br/>
-        <hr size="10" color="red">
-        김쥐우: <br><img src="rat_MK2.png" alt="이미지를 불러올 수 없습니다."><br/>
-        불러올 수 없을 때: <img src="rat.png" alt="이미지를 불러올 수 없습니다.">
-
-    </body>
-</html>
+---
+layout: default
+title: "홈"
+---
+<h2>최근 글</h2>
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      <span>{{ post.date | date: "%Y-%m-%d" }}</span>
+    </li>
+  {% endfor %}
+</ul>
