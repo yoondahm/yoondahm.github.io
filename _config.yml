@@ -4,4 +4,7 @@ url: "https://yoondahm.github.io"
 baseurl: ""
 
 markdown: kramdown
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
 permalink: /:categories/:title
