@@ -1,0 +1,73 @@
+.content code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: var(--border);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+}
+
+.content pre {
+  background: var(--bg-light);
+  color: var(--text-muted);
+  padding: 1.25rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+.content pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.875rem;
+  color: inherit;
+}
+
+/* syntax highlighting */
+
+.content pre .cp { /*전처리문*/
+  color: aqua;
+}
+
+.content pre .k { /*키워드*/
+  color: #6C95EB;
+}
+
+.content pre .kt { /*기본 자료형*/
+  color: #6C95EB;
+}
+
+.content pre .nn { /*네임스페이스*/
+  color: #C191FF;
+}
+
+.content pre .nc { /*클래스*/
+  color: #C191FF;
+}
+
+.content pre .n { /*변수/함수 이름*/
+  color: #C191FF;
+}
+
+.content pre .nf { /*함수 이름(위에랑 뭔 차인진 몰?루)*/
+  color: #39cc9b;
+}
+
+.content pre .p { /*특수문자*/
+  color: #BDBDBD;
+}
+
+.content pre .m { /*숫자 리터럴*/
+  color: #ED94C0;
+}
+
+.content pre .s { /*문자열 리터럴*/
+  color: #c9a26d;
+}
+
+.content pre .sc { /*문자 리터럴*/
+  color: #c9a26d;
+}
+
+.content pre .c1 { /*주석*/
+  color: #85c46c;
+}
