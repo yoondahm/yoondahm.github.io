@@ -38,10 +38,26 @@
   --warning: oklch(0.7 0.05 100);
   --success: oklch(0.7 0.05 160);
   --info: oklch(0.7 0.05 260);
+  /* 그림자 */
+  --shadow-s: 
+  inset 0 1px 1px #ffffff30, /*하이라이트*/
+  0 2px 4px #00000030, /*다크 쉐도우*/
+  0 4px 8px #00000015; /*소프트 쉐도우*/
+  --shadow-m:
+  inset 0 1px 1px #ffffff45,
+  0 2px 4px #00000030,
+  0 4px 8px #00000015;
+  --shadow-l:
+  inset 0 1px 1px #ffffff60,
+  0 4px 6px #00000030,
+  0 6px 10px #00000015;
   /* 전역 변수 */
   --font-sans: "Pretendard", "Apple SD Gothic Neo", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
-  --max-width: 720px;
+  --max-width: 700px;
+  @media (max-width: 1200px) {
+    --max-width: 95%;
+  }
 }
 @media (prefers-color-scheme: light) {
   body {

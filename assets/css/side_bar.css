@@ -1,0 +1,31 @@
+.side_bar_left {
+  @media (max-width: 1200px) {
+    display: none;
+  }
+  position: fixed;
+  padding: 2rem;
+  max-width: calc((100vw - var(--max-width)) / 2);
+  margin: 0 2rem;
+  color: var(--text);
+}
+
+.side_bar_left li {
+    list-style: none;
+}
+
+.side_bar_left .profile-image {
+    border-radius: 15%;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+    box-shadow: var(--shadow-m);
+}
+
+.side_bar_left a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.side_bar_left a:hover {
+    color: var(--text);
+}
