@@ -38,3 +38,9 @@ article > time {
   color: var(--text-muted);
   margin-bottom: 1.25rem;
 }
+
+.content hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2.5rem 0;
+}

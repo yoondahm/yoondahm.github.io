@@ -1,5 +1,7 @@
 /* ── Reset & Base ── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -37,42 +39,43 @@
   --success: oklch(0.7 0.05 160);
   --info: oklch(0.7 0.05 260);
   /* 전역 변수 */
-  --font-sans: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans: "Pretendard", "Apple SD Gothic Neo", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
   --max-width: 720px;
 }
-body.light {
-  /* hsl (fallback color) */
-  --bg-dark: hsl(217 10% 90%);
-  --bg: hsl(217 22% 95%);
-  --bg-light: hsl(217 100% 100%);
-  --text: hsl(217 28% 5%);
-  --text-muted: hsl(217 6% 29%);
-  --highlight: hsl(217 100% 100%);
-  --border: hsl(217 4% 51%);
-  --border-muted: hsl(217 5% 63%);
-  --primary: hsl(217 54% 32%);
-  --secondary: hsl(43 100% 15%);
-  --danger: hsl(9 21% 41%);
-  --warning: hsl(52 23% 34%);
-  --success: hsl(147 19% 36%);
-  --info: hsl(217 22% 41%);
-  /* oklch */
-  --bg-dark: oklch(0.92 0.005 260);
-  --bg: oklch(0.96 0.005 260);
-  --bg-light: oklch(1 0.005 260);
-  --text: oklch(0.15 0.01 260);
-  --text-muted: oklch(0.4 0.01 260);
-  --highlight: oklch(1 0.01 260);
-  --border: oklch(0.6 0.01 260);
-  --border-muted: oklch(0.7 0.01 260);
-  --primary: oklch(0.4 0.1 260);
-  --secondary: oklch(0.4 0.1 80);
-  --danger: oklch(0.5 0.05 30);
-  --warning: oklch(0.5 0.05 100);
-  --success: oklch(0.5 0.05 160);
-  --info: oklch(0.5 0.05 260);
-  
+@media (prefers-color-scheme: light) {
+  body {
+    /* hsl (fallback color) */
+    --bg-dark: hsl(217 10% 90%);
+    --bg: hsl(217 22% 95%);
+    --bg-light: hsl(217 100% 100%);
+    --text: hsl(217 28% 5%);
+    --text-muted: hsl(217 6% 29%);
+    --highlight: hsl(217 100% 100%);
+    --border: hsl(217 4% 51%);
+    --border-muted: hsl(217 5% 63%);
+    --primary: hsl(217 54% 32%);
+    --secondary: hsl(43 100% 15%);
+    --danger: hsl(9 21% 41%);
+    --warning: hsl(52 23% 34%);
+    --success: hsl(147 19% 36%);
+    --info: hsl(217 22% 41%);
+    /* oklch */
+    --bg-dark: oklch(0.92 0.005 260);
+    --bg: oklch(0.96 0.005 260);
+    --bg-light: oklch(1 0.005 260);
+    --text: oklch(0.15 0.01 260);
+    --text-muted: oklch(0.4 0.01 260);
+    --highlight: oklch(1 0.01 260);
+    --border: oklch(0.6 0.01 260);
+    --border-muted: oklch(0.7 0.01 260);
+    --primary: oklch(0.4 0.1 260);
+    --secondary: oklch(0.4 0.1 80);
+    --danger: oklch(0.5 0.05 30);
+    --warning: oklch(0.5 0.05 100);
+    --success: oklch(0.5 0.05 160);
+    --info: oklch(0.5 0.05 260);
+  }
 }
 
 body {
@@ -81,10 +84,13 @@ body {
   line-height: 1.8;
   color: var(--text);
   background-color: var(--bg);
+  transition: color .8s;
 }
 
 /* ── Layout ── */
-header, main, footer {
+header,
+main,
+footer {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 1.5rem;

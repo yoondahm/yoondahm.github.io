@@ -7,7 +7,7 @@ title: "홈"
   {% for post in site.posts %}
     <li>
       <a href="{{ post.url }}">{{ post.title }}</a>
-      <span>{{ post.date | date: "%Y-%m-%d" }}</span>
+      <time>{{ post.date | date: "%Y-%m-%d" }}</time>
     </li>
   {% endfor %}
 </ul>
