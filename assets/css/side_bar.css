@@ -23,6 +23,7 @@
     margin-bottom: 0.5rem;
     border: 2px solid var(--border);
     box-shadow: var(--shadow-m);
+    max-width: 10rem;
 }
 
 .side_bar_left .description {
