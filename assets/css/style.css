@@ -55,6 +55,7 @@
   --font-sans: "Pretendard", "Apple SD Gothic Neo", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
   --max-width: 700px;
+  /* --mobile-max-width: 1200px; */
   @media (max-width: 1200px) {
     --max-width: 95%;
   }

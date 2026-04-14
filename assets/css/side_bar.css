@@ -13,11 +13,21 @@
     list-style: none;
 }
 
+.side_bar_left .name {
+    font-weight: bold;
+}
+
 .side_bar_left .profile-image {
     border-radius: 15%;
     overflow: hidden;
     margin-bottom: 0.5rem;
     box-shadow: var(--shadow-m);
+}
+
+.side_bar_left .description {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
 }
 
 .side_bar_left a {
