@@ -10,9 +10,33 @@ article > time {
   font-size: 0.85rem;
   color: var(--text-muted);
   display: block;
+}
+
+article > .categories {
+  margin-top: 1rem;
   margin-bottom: 3rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid var(--border);
+}
+
+article .category {
+  display: inline;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background-color: var(--bg-light);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  margin-right: 0.25rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+article .category::before {
+  content: "#";  
+}
+
+article .category:hover {
+  background-color: var(--primary);
+  color: var(--bg-light);
 }
 
 .content h2 { font-size: 1.25rem; font-weight: 600; margin: 2.5rem 0 1rem; }

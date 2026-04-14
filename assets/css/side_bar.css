@@ -21,6 +21,7 @@
     border-radius: 15%;
     overflow: hidden;
     margin-bottom: 0.5rem;
+    border: 2px solid var(--border);
     box-shadow: var(--shadow-m);
 }
 

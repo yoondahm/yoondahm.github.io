@@ -25,50 +25,62 @@
 
 /* syntax highlighting */
 
-.content pre .cp { /*전처리문*/
+.content pre .cp {
+  /*전처리문*/
   color: aqua;
 }
 
-.content pre .k { /*키워드*/
-  color: #6C95EB;
+.content pre .k {
+  /*키워드*/
+  color: #6c95eb;
 }
 
-.content pre .kt { /*기본 자료형*/
-  color: #6C95EB;
+.content pre .kt {
+  /*기본 자료형*/
+  color: #6c95eb;
 }
 
-.content pre .nn { /*네임스페이스*/
-  color: #C191FF;
+.content pre .nn {
+  /*네임스페이스*/
+  color: #c191ff;
 }
 
-.content pre .nc { /*클래스*/
-  color: #C191FF;
+.content pre .nc {
+  /*클래스*/
+  color: #c191ff;
 }
 
-.content pre .n { /*변수/함수 이름*/
-  color: #C191FF;
+.content pre .n {
+  /*변수/함수 이름*/
+  color: #c191ff;
 }
 
-.content pre .nf { /*함수 이름(위에랑 뭔 차인진 몰?루)*/
+.content pre .nf {
+  /*함수 이름(위에랑 뭔 차인진 몰?루)*/
   color: #39cc9b;
 }
 
-.content pre .p { /*특수문자*/
-  color: #BDBDBD;
+.content pre .p {
+  /*특수문자*/
+  color: #bdbdbd;
 }
 
-.content pre .m { /*숫자 리터럴*/
-  color: #ED94C0;
+.content pre .m {
+  /*숫자 리터럴*/
+  color: #ed94c0;
 }
 
-.content pre .s { /*문자열 리터럴*/
+.content pre .s {
+  /*문자열 리터럴*/
   color: #c9a26d;
 }
 
-.content pre .sc { /*문자 리터럴*/
+.content pre .sc {
+  /*문자 리터럴*/
   color: #c9a26d;
 }
 
-.content pre .c1 { /*주석*/
+.content pre .c1 {
+  /*주석*/
   color: #85c46c;
 }
