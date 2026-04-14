@@ -1,22 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
+  {% include head.html %}
 
-{% include head.html %}
-
-<body>
-  <header>
-    {% include nav.html %}
-  </header>
-  <aside>
-    {% include side_bar_left.html %}
-    {% include side_bar_right.html %}
-  </aside>
-  <main>
-    {{ content }}
-  </main>
-  <footer>
-    <p>© 2026 {{ site.title }}</p>
-  </footer>
-  <script defer src="{{ '/assets/js/main.js' | relative_url }}"></script>
-</body>
+  <body>
+    {% include header.html %}
+    <aside>
+      {% include side_bar_left.html %} {% include side_bar_right.html %}
+    </aside>
+    <main>{{ content }}</main>
+    <footer>
+      <p>© 2026 {{ site.title }}</p>
+    </footer>
+    <script defer src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  </body>
 </html>

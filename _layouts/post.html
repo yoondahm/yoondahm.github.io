@@ -6,7 +6,7 @@ layout: default
   <time>{{ page.date | date: "%Y년 %m월 %d일" }}</time>
   <div class="categories not_draggable">
     {% for category in page.categories %}
-      <span class="category">{{ category }}</span>
+      <a href="{{ "/categories/" | relative_url }}{{ category | slugify }}" class="category">{{ category }}</a>
     {% endfor %}
   </div>
   <div class="content">

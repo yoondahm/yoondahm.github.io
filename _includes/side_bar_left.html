@@ -1,12 +1,12 @@
 <div class="side_bar_left">
-  <a href="https://github.com/yoondahm" target="_blank">
+  <a href="https://github.com/yoondahm" target="_blank" rel="noopener noreferrer">
     <img src="https://github.com/yoondahm.png" alt="프로필 사진" class="profile-image">
   </a>
-  <h1 class="name">yoondahm</h1>
-  <div class="description">{{ site.description }}</div>
+  <h1 class="name not_draggable">yoondahm</h1>
+  <div class="description not_draggable">{{ site.description }}</div>
   <ul>
-    <li><a href="/test1">테스트1</a></li>
-    <li><a href="/test2">테스트2</a></li>
-    <li><a href="/test3">테스트3</a></li>
+    <li><a href={{"/" | relative_url }}>테스트1</a></li>
+    <li><a href={{"/" | relative_url }}>테스트2</a></li>
+    <li><a href={{"/" | relative_url }}>테스트3</a></li>
   </ul>
 </div>
