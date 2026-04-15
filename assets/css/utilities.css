@@ -4,3 +4,27 @@
   -ms-user-select: none;
   user-select: none;
 }
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip .tooltip-text {
+  width: max-content;
+  background-color: var(--info);
+  color: var(--text);
+  text-align: center;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltip-text {
+    opacity: 1;
+}
