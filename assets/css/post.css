@@ -68,3 +68,10 @@ article .category:hover {
   border-top: 1px solid var(--border);
   margin: 2.5rem 0;
 }
+
+.content img {
+  max-width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-l);
+  margin: 1.5rem 0;
+}

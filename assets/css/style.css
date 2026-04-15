@@ -40,8 +40,7 @@
   --info: oklch(0.7 0.05 260);
   /* 그림자 */
   --shadow-s:
-    inset 0 1px 1px #ffffff30, /*하이라이트*/ 0 2px 4px #00000030,
-    /*다크 쉐도우*/ 0 4px 8px #00000015; /*소프트 쉐도우*/
+    inset 0 1px 1px #ffffff30, 0 2px 4px #00000030, 0 4px 8px #00000015;
   --shadow-m:
     inset 0 1px 1px #ffffff45, 0 2px 4px #00000030, 0 4px 8px #00000015;
   --shadow-l:
@@ -96,7 +95,9 @@ body {
   padding-top: 1.5rem;
   color: var(--text);
   background-color: var(--bg);
-  transition: color 0.2s ease, background-color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
 }
 
 header,
