@@ -11,7 +11,7 @@
 
 .tooltip .tooltip-text {
   width: max-content;
-  background-color: var(--info);
+  background-color: var(--bg);
   color: var(--text);
   text-align: center;
   border-radius: 0.5rem;
@@ -23,6 +23,7 @@
   transform: translateX(-50%);
   opacity: 0;
   transition: opacity 0.3s;
+  box-shadow: var(--shadow-s);
 }
 
 .tooltip:hover .tooltip-text {
