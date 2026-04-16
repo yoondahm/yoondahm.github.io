@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+  <link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="https://github.com/yoondahm.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>코드 하이라이팅 테스트 | 똑똑한 개발 블로그</title>
+  <link rel="stylesheet" href="/assets/css/style.css"> 
+<link rel="stylesheet" href="/assets/css/header.css">
+<link rel="stylesheet" href="/assets/css/side_bar.css">
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/footer.css">
+<link rel="stylesheet" href="/assets/css/home.css">
+<link rel="stylesheet" href="/assets/css/postlist.css">
+<link rel="stylesheet" href="/assets/css/post.css">
+<link rel="stylesheet" href="/assets/css/code.css">
+<link rel="stylesheet" href="/assets/css/scrollbar.css">
+<link rel="stylesheet" href="/assets/css/utilities.css">
+<link rel="stylesheet" href="/assets/css/modules.css">
+</head>
+
+  <body>
+    <header>
+  <nav>
+    <a href="/">똑똑한 개발 블로그</a>
+    <a href="/categories/">카테고리</a>
+  </nav>
+  
+  <button id="theme-toggle" class="toggle tooltip" aria-label="Toggle Theme">
+    <span class="toggle-btn"></span>
+    <span class="tooltip-text">테마 변경</span>
+  </button>
+</header>
+
+    <aside>
+      <div class="side_bar_left">
+  <a href="https://github.com/yoondahm" target="_blank" rel="noopener noreferrer">
+    <img src="https://github.com/yoondahm.png" alt="프로필 사진" class="profile-image">
+  </a>
+  <h1 class="name not_draggable">yoondahm</h1>
+  <div class="description not_draggable">배운 것을 공유합니다.</div>
+  <ul>
+    <li><a href=/>테스트1</a></li>
+    <li><a href=/>테스트2</a></li>
+    <li><a href=/>테스트3</a></li>
+  </ul>
+</div>
+ 
+    </aside>
+    <main><article>
+  <h1>코드 하이라이팅 테스트</h1>
+  <time>2026년 04월 12일</time>
+  <div class="categories not_draggable">
+    
+      <a href="/categories/test" class="category">Test</a>
+    
+  </div>
+  <div class="content">
+    <p>C#:</p>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">Code.Core.Collections.Generic</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">PriorityQueue</span><span class="p">&lt;</span><span class="n">TElement</span><span class="p">,</span> <span class="n">TPriority</span><span class="p">&gt;</span> <span class="k">where</span> <span class="n">TPriority</span> <span class="p">:</span> <span class="n">IComparable</span><span class="p">&lt;</span><span class="n">TPriority</span><span class="p">&gt;</span> <span class="p">{</span>
+        <span class="k">private</span> <span class="k">readonly</span> <span class="n">List</span><span class="p">&lt;(</span><span class="n">TElement</span> <span class="n">Element</span><span class="p">,</span> <span class="n">TPriority</span> <span class="n">Priority</span><span class="p">)&gt;</span> <span class="n">_heap</span> <span class="p">=</span> <span class="k">new</span><span class="p">();</span>
+
+        <span class="k">public</span> <span class="kt">int</span> <span class="n">Count</span> <span class="p">=&gt;</span> <span class="n">_heap</span><span class="p">.</span><span class="n">Count</span><span class="p">;</span>
+
+        <span class="k">public</span> <span class="k">void</span> <span class="nf">Enqueue</span><span class="p">(</span><span class="n">TElement</span> <span class="n">element</span><span class="p">,</span> <span class="n">TPriority</span> <span class="n">priority</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">_heap</span><span class="p">.</span><span class="nf">Add</span><span class="p">((</span><span class="n">element</span><span class="p">,</span> <span class="n">priority</span><span class="p">));</span>
+            <span class="kt">int</span> <span class="n">c</span> <span class="p">=</span> <span class="n">_heap</span><span class="p">.</span><span class="n">Count</span> <span class="p">-</span> <span class="m">1</span><span class="p">;</span> <span class="c1">// 이건 주석이야.</span>
+            <span class="k">while</span> <span class="p">(</span><span class="n">c</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kt">int</span> <span class="n">p</span> <span class="p">=</span> <span class="p">(</span><span class="n">c</span> <span class="p">-</span> <span class="m">1</span><span class="p">)</span> <span class="p">/</span> <span class="m">2</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">_heap</span><span class="p">[</span><span class="n">c</span><span class="p">].</span><span class="n">Priority</span><span class="p">.</span><span class="nf">CompareTo</span><span class="p">(</span><span class="n">_heap</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">Priority</span><span class="p">)</span> <span class="p">&gt;=</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="p">(</span><span class="n">_heap</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="n">_heap</span><span class="p">[</span><span class="n">p</span><span class="p">])</span> <span class="p">=</span> <span class="p">(</span><span class="n">_heap</span><span class="p">[</span><span class="n">p</span><span class="p">],</span> <span class="n">_heap</span><span class="p">[</span><span class="n">c</span><span class="p">]);</span>
+                <span class="n">c</span> <span class="p">=</span> <span class="n">p</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="kt">bool</span> <span class="nf">Dequeue</span><span class="p">(</span><span class="k">out</span> <span class="n">TElement</span> <span class="n">element</span><span class="p">,</span> <span class="k">out</span> <span class="n">TPriority</span> <span class="n">priority</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nf">DequeueAt</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="k">out</span> <span class="n">element</span><span class="p">,</span> <span class="k">out</span> <span class="n">priority</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="kt">bool</span> <span class="nf">DequeueAt</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="k">out</span> <span class="n">TElement</span> <span class="n">element</span><span class="p">,</span> <span class="k">out</span> <span class="n">TPriority</span> <span class="n">priority</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">index</span> <span class="p">&lt;</span> <span class="m">0</span> <span class="p">||</span> <span class="n">index</span> <span class="p">&gt;=</span> <span class="n">_heap</span><span class="p">.</span><span class="n">Count</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">element</span> <span class="p">=</span> <span class="k">default</span><span class="p">;</span>
+                <span class="n">priority</span> <span class="p">=</span> <span class="k">default</span><span class="p">;</span>
+                <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">priority</span><span class="p">)</span> <span class="p">=</span> <span class="n">_heap</span><span class="p">[</span><span class="n">index</span><span class="p">];</span>
+            <span class="kt">var</span> <span class="n">last</span> <span class="p">=</span> <span class="n">_heap</span><span class="p">[^</span><span class="m">1</span><span class="p">];</span>
+            <span class="n">_heap</span><span class="p">.</span><span class="nf">RemoveAt</span><span class="p">(</span><span class="n">_heap</span><span class="p">.</span><span class="n">Count</span> <span class="p">-</span> <span class="m">1</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">_heap</span><span class="p">.</span><span class="n">Count</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="n">_heap</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="p">=</span> <span class="n">last</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">p</span> <span class="p">=</span> <span class="n">index</span><span class="p">;</span>
+            <span class="k">while</span> <span class="p">(</span><span class="k">true</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kt">int</span> <span class="n">c1</span> <span class="p">=</span> <span class="m">2</span> <span class="p">*</span> <span class="n">p</span> <span class="p">+</span> <span class="m">1</span><span class="p">;</span>
+                <span class="kt">int</span> <span class="n">c2</span> <span class="p">=</span> <span class="m">2</span> <span class="p">*</span> <span class="n">p</span> <span class="p">+</span> <span class="m">2</span><span class="p">;</span>
+                <span class="kt">int</span> <span class="n">min</span> <span class="p">=</span> <span class="n">p</span><span class="p">;</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">c1</span> <span class="p">&lt;</span> <span class="n">_heap</span><span class="p">.</span><span class="n">Count</span> <span class="p">&amp;&amp;</span> <span class="n">_heap</span><span class="p">[</span><span class="n">c1</span><span class="p">].</span><span class="n">Priority</span><span class="p">.</span><span class="nf">CompareTo</span><span class="p">(</span><span class="n">_heap</span><span class="p">[</span><span class="n">min</span><span class="p">].</span><span class="n">Priority</span><span class="p">)</span> <span class="p">&lt;</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">min</span> <span class="p">=</span> <span class="n">c1</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">c2</span> <span class="p">&lt;</span> <span class="n">_heap</span><span class="p">.</span><span class="n">Count</span> <span class="p">&amp;&amp;</span> <span class="n">_heap</span><span class="p">[</span><span class="n">c2</span><span class="p">].</span><span class="n">Priority</span><span class="p">.</span><span class="nf">CompareTo</span><span class="p">(</span><span class="n">_heap</span><span class="p">[</span><span class="n">min</span><span class="p">].</span><span class="n">Priority</span><span class="p">)</span> <span class="p">&lt;</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">min</span> <span class="p">=</span> <span class="n">c2</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">min</span> <span class="p">==</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="p">(</span><span class="n">_heap</span><span class="p">[</span><span class="n">p</span><span class="p">],</span> <span class="n">_heap</span><span class="p">[</span><span class="n">min</span><span class="p">])</span> <span class="p">=</span> <span class="p">(</span><span class="n">_heap</span><span class="p">[</span><span class="n">min</span><span class="p">],</span> <span class="n">_heap</span><span class="p">[</span><span class="n">p</span><span class="p">]);</span>
+                <span class="n">p</span> <span class="p">=</span> <span class="n">min</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="k">void</span> <span class="nf">Clear</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="n">_heap</span><span class="p">?.</span><span class="nf">Clear</span><span class="p">();</span>
+
+        <span class="k">public</span> <span class="kt">bool</span> <span class="nf">Peek</span><span class="p">(</span><span class="k">out</span> <span class="n">TElement</span> <span class="n">element</span><span class="p">,</span> <span class="k">out</span> <span class="n">TPriority</span> <span class="n">priority</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">_heap</span><span class="p">.</span><span class="n">Count</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">element</span> <span class="p">=</span> <span class="k">default</span><span class="p">;</span>
+                <span class="n">priority</span> <span class="p">=</span> <span class="k">default</span><span class="p">;</span>
+                <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">priority</span><span class="p">)</span> <span class="p">=</span> <span class="n">_heap</span><span class="p">[</span><span class="m">0</span><span class="p">];</span>
+            <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>C++:</p>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp">
+#include</span><span class="cpf">&lt;conio.h&gt;</span><span class="cp">
+#include</span><span class="cpf">&lt;Windows.h&gt;</span><span class="cp">
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">enum</span> <span class="k">class</span> <span class="nc">Scene</span>
+<span class="p">{</span>
+	<span class="n">TITLE</span><span class="p">,</span> <span class="n">BATTLE</span><span class="p">,</span> <span class="n">RESULT</span>
+<span class="p">};</span>
+<span class="k">enum</span> <span class="k">class</span> <span class="nc">ActionType</span>
+<span class="p">{</span>
+	<span class="n">ATTACK</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">HEAL</span>
+<span class="p">};</span>
+<span class="kt">void</span> <span class="nf">Init</span><span class="p">(</span><span class="n">Scene</span><span class="o">&amp;</span> <span class="n">scene</span><span class="p">,</span> <span class="kt">int</span><span class="o">&amp;</span> <span class="n">playerHp</span><span class="p">,</span> <span class="kt">int</span><span class="o">&amp;</span> <span class="n">slimeHp</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">Update</span><span class="p">(</span><span class="n">Scene</span><span class="o">&amp;</span> <span class="n">scene</span><span class="p">,</span> <span class="kt">int</span><span class="o">&amp;</span> <span class="n">playerHp</span><span class="p">,</span> <span class="kt">int</span><span class="o">&amp;</span> <span class="n">slimeHp</span><span class="p">,</span> <span class="kt">bool</span><span class="o">&amp;</span> <span class="n">isRunning</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">Render</span><span class="p">(</span><span class="n">Scene</span> <span class="n">scene</span><span class="p">,</span> <span class="kt">int</span> <span class="n">playerHp</span><span class="p">,</span> <span class="kt">int</span> <span class="n">slimeHp</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">GetValidInput</span><span class="p">(</span><span class="kt">int</span> <span class="n">min</span><span class="p">,</span> <span class="kt">int</span> <span class="n">max</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">srand</span><span class="p">((</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="p">)</span><span class="n">time</span><span class="p">(</span><span class="nb">nullptr</span><span class="p">));</span>
+	<span class="n">Scene</span> <span class="n">scene</span><span class="p">;</span>
+	<span class="kt">int</span> <span class="n">playerHp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">slimeHp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="kt">bool</span> <span class="n">isRunning</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+
+	<span class="n">Init</span><span class="p">(</span><span class="n">scene</span><span class="p">,</span> <span class="n">playerHp</span><span class="p">,</span> <span class="n">slimeHp</span><span class="p">);</span>
+	<span class="k">while</span> <span class="p">(</span><span class="n">isRunning</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">Update</span><span class="p">(</span><span class="n">scene</span><span class="p">,</span> <span class="n">playerHp</span><span class="p">,</span> <span class="n">slimeHp</span><span class="p">,</span> <span class="n">isRunning</span><span class="p">);</span>
+		<span class="n">Render</span><span class="p">(</span><span class="n">scene</span><span class="p">,</span> <span class="n">playerHp</span><span class="p">,</span> <span class="n">slimeHp</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">Init</span><span class="p">(</span><span class="n">Scene</span><span class="o">&amp;</span> <span class="n">scene</span><span class="p">,</span> <span class="kt">int</span><span class="o">&amp;</span> <span class="n">playerHp</span><span class="p">,</span> <span class="kt">int</span><span class="o">&amp;</span> <span class="n">slimeHp</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">scene</span> <span class="o">=</span> <span class="n">Scene</span><span class="o">::</span><span class="n">TITLE</span><span class="p">;</span>
+	<span class="n">playerHp</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
+	<span class="n">slimeHp</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+	<span class="n">system</span><span class="p">(</span><span class="s">"cls"</span><span class="p">);</span>
+	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"============================"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"   &lt; 슬라임 잡기 게임 &gt;   "</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"============================"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"아무 키나 누르면 시작합니다..."</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+	<span class="n">_getch</span><span class="p">();</span>
+	<span class="n">scene</span> <span class="o">=</span> <span class="n">Scene</span><span class="o">::</span><span class="n">BATTLE</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">Update</span><span class="p">(</span><span class="n">Scene</span><span class="o">&amp;</span> <span class="n">scene</span><span class="p">,</span> <span class="kt">int</span><span class="o">&amp;</span> <span class="n">playerHp</span><span class="p">,</span> <span class="kt">int</span><span class="o">&amp;</span> <span class="n">slimeHp</span><span class="p">,</span> <span class="kt">bool</span><span class="o">&amp;</span> <span class="n">isRunning</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">scene</span> <span class="o">==</span> <span class="n">Scene</span><span class="o">::</span><span class="n">BATTLE</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"행동 선택(1. 공격, 2. 회복): "</span><span class="p">;</span>
+		<span class="n">ActionType</span> <span class="n">act</span> <span class="o">=</span> <span class="p">(</span><span class="n">ActionType</span><span class="p">)</span><span class="n">GetValidInput</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+
+		<span class="k">if</span> <span class="p">(</span><span class="n">act</span> <span class="o">==</span> <span class="n">ActionType</span><span class="o">::</span><span class="n">ATTACK</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="kt">int</span> <span class="n">dmg</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">+</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">// 5 ~ 14</span>
+			<span class="n">slimeHp</span> <span class="o">-=</span> <span class="n">dmg</span><span class="p">;</span>
+			<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="s">"[공격 성공] 슬라임에게"</span> <span class="o">&lt;&lt;</span> <span class="n">dmg</span> <span class="o">&lt;&lt;</span> <span class="s">"데미지!"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">act</span> <span class="o">==</span> <span class="n">ActionType</span><span class="o">::</span><span class="n">HEAL</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">playerHp</span> <span class="o">+=</span> <span class="mi">15</span><span class="p">;</span>
+			<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="s">"[체력 회복] 15 증가"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="k">if</span> <span class="p">(</span><span class="n">slimeHp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="n">playerHp</span> <span class="o">-=</span> <span class="mi">8</span><span class="p">;</span>
+				<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="s">"[피격] 플레이어가 8 데미지 받음 "</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="k">else</span>
+				<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"[MISS]"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="n">Sleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">playerHp</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">slimeHp</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+			<span class="n">scene</span> <span class="o">=</span> <span class="n">Scene</span><span class="o">::</span><span class="n">RESULT</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">scene</span> <span class="o">==</span> <span class="n">Scene</span><span class="o">::</span><span class="n">RESULT</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"게임을 다시 시작하시겠습니까?(Y/N)"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+		<span class="kt">char</span> <span class="n">ch</span> <span class="o">=</span> <span class="n">_getch</span><span class="p">();</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">ch</span> <span class="o">==</span> <span class="sc">'y'</span> <span class="o">||</span> <span class="n">ch</span> <span class="o">==</span> <span class="sc">'Y'</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">Init</span><span class="p">(</span><span class="n">scene</span><span class="p">,</span> <span class="n">playerHp</span><span class="p">,</span> <span class="n">slimeHp</span><span class="p">);</span>
+		<span class="p">}</span>
+		<span class="k">else</span> <span class="nf">if</span><span class="p">(</span><span class="n">ch</span><span class="o">==</span> <span class="sc">'n'</span> <span class="o">||</span> <span class="n">ch</span> <span class="o">==</span><span class="sc">'N'</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"프로그램 종료"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+			<span class="n">isRunning</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">Render</span><span class="p">(</span><span class="n">Scene</span> <span class="n">scene</span><span class="p">,</span> <span class="kt">int</span> <span class="n">playerHp</span><span class="p">,</span> <span class="kt">int</span> <span class="n">slimeHp</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">system</span><span class="p">(</span><span class="s">"cls"</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">scene</span> <span class="o">==</span> <span class="n">Scene</span><span class="o">::</span><span class="n">BATTLE</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"--- [ 전투 진행 중 ] ---"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"플레이어 체력"</span> <span class="o">&lt;&lt;</span> <span class="n">playerHp</span> <span class="o">&lt;&lt;</span> <span class="s">"| 슬라임 체력:"</span> <span class="o">&lt;&lt;</span> <span class="n">slimeHp</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">scene</span> <span class="o">==</span> <span class="n">Scene</span><span class="o">::</span><span class="n">RESULT</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"--- [ 최종 결과 ] ---"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">playerHp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"승리! 플레이어가 생존에 성공했습니다."</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="k">else</span>
+		<span class="p">{</span>
+			<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"패배... 플레이어가 쓰러졌습니다."</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">GetValidInput</span><span class="p">(</span><span class="kt">int</span> <span class="n">min</span><span class="p">,</span> <span class="kt">int</span> <span class="n">max</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="kt">int</span> <span class="n">input</span><span class="p">;</span>
+	<span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">input</span><span class="p">;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">cin</span><span class="p">.</span><span class="n">fail</span><span class="p">()</span> <span class="o">||</span> <span class="n">input</span> <span class="o">&lt;</span> <span class="n">min</span> <span class="o">||</span> <span class="n">input</span> <span class="o">&gt;</span> <span class="n">max</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">cin</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+			<span class="n">cin</span><span class="p">.</span><span class="n">ignore</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="sc">'\n'</span><span class="p">);</span>
+			<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"잘못된 입력입니다. "</span> <span class="o">&lt;&lt;</span> <span class="n">min</span> <span class="o">&lt;&lt;</span> <span class="s">"~"</span>
+				<span class="o">&lt;&lt;</span> <span class="n">max</span> <span class="o">&lt;&lt;</span> <span class="s">"사이 숫자를 입력하세요. "</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+			<span class="k">continue</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="k">else</span>
+			<span class="k">return</span> <span class="n">input</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+  </div>
+</article></main>
+    <footer>
+      <p>© 2026 똑똑한 개발 블로그</p>
+    </footer>
+    <script defer src="/assets/js/main.js"></script>
+  </body>
+</html>
