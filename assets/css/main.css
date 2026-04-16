@@ -3,3 +3,8 @@ main {
   padding-bottom: 4rem;
   min-height: calc(100vh - 200px);
 }
+main > h1 {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--primary);
+}
