@@ -1,0 +1,12 @@
+---
+layout: default
+title: "카테고리"
+---
+<h1>카테고리</h1>
+<ul class="post-list">
+  {% for category in site.categories %}
+    <li>
+      <a href="{{ '/categories/' | append: category[0] | relative_url }}">{{ category[0] }}</a>
+    </li>
+  {% endfor %}
+</ul>
