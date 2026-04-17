@@ -55,7 +55,7 @@
   }
 }
 
-body.light-mode {
+:root.light-mode {
   /* hsl (fallback color) */
   --bg-dark: hsl(217 10% 90%);
   --bg: hsl(217 22% 95%);
