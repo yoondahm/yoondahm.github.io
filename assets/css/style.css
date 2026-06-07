@@ -40,7 +40,7 @@
   --info: oklch(0.7 0.05 260);
   /* 그림자 */
   --shadow-s:
-    inset 0 1px 1px #ffffff30, 0 2px 4px #00000030, 0 4px 8px #00000015;
+    inset 0 1px 1px #ffffff30, 0 1px 3px #00000030, 0 2px 6px #00000015;
   --shadow-m:
     inset 0 1px 1px #ffffff45, 0 2px 4px #00000030, 0 4px 8px #00000015;
   --shadow-l:

@@ -6,6 +6,12 @@
   border-radius: 4px;
 }
 
+.content p code {
+  color: var(--secondary);
+  background-color: var(--bg-light);
+  /* box-shadow: var(--shadow-s); */
+}
+
 .content pre {
   background: var(--bg-light);
   color: var(--text-muted);
@@ -24,6 +30,7 @@
   padding: 0;
   font-size: 0.875rem;
   color: inherit;
+  tab-size: 4;
 }
 
 /* syntax highlighting */
